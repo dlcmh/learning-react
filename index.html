@@ -29,8 +29,8 @@
 
           return(
             <div style={cardStyle}>
-              <Square/>
-              <Label/>
+              <Square color={this.props.color}/>
+              <Label color={this.props.color}/>
             </div>
           );
         }
@@ -40,7 +40,7 @@
         render: function() {
           var squareStyle = {
             height: 150,
-            backgroundColor: "#FF6663"
+            backgroundColor: this.props.color
           };
 
           return(
@@ -60,14 +60,14 @@
           };
 
           return(
-            <p style={labelStyle}>#FF6663</p>
+            <p style={labelStyle}>{this.props.color}</p>
           );
         }
       });
 
       ReactDOM.render(
         <div>
-          <Card/>
+          <Card color="#FFA737"/>
         </div>,
         document.querySelector("#container")
       );
