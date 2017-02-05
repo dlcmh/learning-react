@@ -29,6 +29,7 @@
 
           return(
             <div style={cardStyle}>
+              <Square/>
             </div>
           );
         }
@@ -36,8 +37,14 @@
 
       var Square = React.createClass({
         render: function() {
+          var squareStyle = {
+            height: 150,
+            backgroundColor: "#FF6663"
+          };
+
           return(
-            <p>Nothing</p>
+            <div style={squareStyle}>
+            </div>
           );
         }
       });
