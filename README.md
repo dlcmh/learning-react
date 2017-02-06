@@ -1,5 +1,11 @@
-Chapter 03 - Components in React
-Chapter 04 - Styling in React
-Chapter 05 - Creating complex components
-Chapter 06 - Transferring properties (props)
-Chapter 08 - Dealing with state
+Chapter 3 - Components in React
+
+Chapter 4 - Styling in React
+
+Chapter 5 - Creating complex components
+
+Chapter 6 - Transferring properties (props)
+
+Chapter 8 - Dealing with state
+
+Chapter 9 - Going from data to UI
