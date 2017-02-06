@@ -16,40 +16,73 @@
   <body>
     <div id="container"></div>
     <script type="text/babel">
-      var Circle = React.createClass({
+      var destination = document.querySelector("#container")
+
+      var Counter = React.createClass({
         render: function() {
-          var circleStyle = {
-            padding: 10,
-            margin: 20,
-            display: "inline-block",
-            backgroundColor: this.props.bgColor,
-            borderRadius: "50%",
-            width: 100,
-            height: 100
+          var textStyle = {
+            fontSize: 72,
+            fontFamily: "sans-serif",
+            color: "#333",
+            fontWeight: "bold"
+          };
+          return (
+            <div style={textStyle}>
+              {this.props.display}
+            </div>
+          )
+        }
+      });
+
+      var CounterParent = React.createClass({
+        getInitialState: function() {
+          return {
+            count: 0
+          };
+        },
+        increase: function(e) {
+          var currentCount = this.state.count;
+          if (e.shiftKey) {
+            currentCount += 10;
+          } else {
+            currentCount += 1;
+          }
+          this.setState({
+            count: currentCount
+          });
+        },
+        render: function() {
+          var backgroundStyle = {
+            padding: 50,
+            backgroundColor: "#FFC53A",
+            width: 250,
+            height: 100,
+            borderRadius: 10,
+            textAlign: "center"
+          };
+          var buttonStyle = {
+            fontSize: "1em",
+            width: 30,
+            height: 30,
+            fontFamily: "sans-serif",
+            color: "#333",
+            fontWeight: "bold",
+            lineHeight: "3px"
           };
           return(
-            <div style={circleStyle}></div>
+            <div style={backgroundStyle}>
+              <Counter display={this.state.count}/>
+              <button onClick={this.increase} style={buttonStyle}>+</button>
+            </div>
           );
         }
       });
 
-      var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
-                    "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
-
-      function showCircles(colors) {
-        var rendered = [];
-        for (var i = 0; i < colors.length; i++) {
-          var color = colors[i];
-          rendered.push(<Circle key={i + color} bgColor={color}/>);
-        }
-        return rendered;
-      }
-
       ReactDOM.render(
         <div>
-          {showCircles(colors)}
+          <CounterParent/>
         </div>,
-        document.querySelector("#container")
+        destination
       );
     </script>
   </body>
