@@ -39,7 +39,8 @@
       function showCircles(colors) {
         var rendered = [];
         for (var i = 0; i < colors.length; i++) {
-          rendered.push(<Circle bgColor={colors[i]}/>);
+          var color = colors[i];
+          rendered.push(<Circle key={i + color} bgColor={color}/>);
         }
         return rendered;
       }
