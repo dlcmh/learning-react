@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>More State!</title>
+    <title>React! React! React!</title>
     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -16,77 +16,39 @@
   <body>
     <div id="container"></div>
     <script type="text/babel">
-      var LightningCounter = React.createClass({
-        getInitialState: function() {
-          return {
-            strikes: 0
-          };
-        },
-        timerTick: function() {
-          this.setState({
-            strikes: this.state.strikes + 100
-          });
-        },
-        componentDidMount: function() {
-          setInterval(this.timerTick, 1000);
-        },
+      var Circle = React.createClass({
         render: function() {
-          var counterStyle = {
-            color: "#66FFFF",
-            fontSize: 50
+          var circleStyle = {
+            padding: 10,
+            margin: 20,
+            display: "inline-block",
+            backgroundColor: this.props.bgColor,
+            borderRadius: "50%",
+            width: 100,
+            height: 100
           };
-          var count = this.state.strikes.toLocaleString();
           return(
-            <h1 style={counterStyle}>{count}</h1>
+            <div style={circleStyle}></div>
           );
         }
       });
 
-      var LightningCounterDisplay = React.createClass({
-        render: function() {
-          var commonStyle = {
-            margin: 0,
-            padding: 0
-          };
+      var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
+                    "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
 
-          var divStyle = {
-            width: 250,
-            textAlign: "center",
-            backgroundColor: "#020202",
-            padding: 40,
-            fontFamily: "sans-serif",
-            color: "#999999",
-            borderRadius: 10
-          };
-
-          var textStyles = {
-            emphasis: {
-              fontSize: 38,
-              ...commonStyle
-            },
-            smallEmphasis: {
-              ...commonStyle
-            },
-            small: {
-              fontSize: 17,
-              opacity: 0.5,
-              ...commonStyle
-            }
-          };
-
-          return(
-            <div style={divStyle}>
-              <LightningCounter/>
-              <h2 style={textStyles.smallEmphasis}>LIGHTNING STRIKES</h2>
-              <h2 style={textStyles.emphasis}>WORLDWIDE</h2>
-              <p style={textStyles.small}>(since you loaded this example)</p>
-            </div>
-          );
+      function showCircles(colors) {
+        var rendered = [];
+        for (var i = 0; i < colors.length; i++) {
+          var color = colors[i];
+          rendered.push(<Circle key={i + color} bgColor={color}/>);
         }
-      });
+        return rendered;
+      }
 
       ReactDOM.render(
-        <LightningCounterDisplay/>,
+        <div>
+          {showCircles(colors)}
+        </div>,
         document.querySelector("#container")
       );
     </script>
