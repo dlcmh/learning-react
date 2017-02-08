@@ -11,3 +11,5 @@ Chapter 8 - Dealing with state
 Chapter 9 - Going from data to UI
 
 Chapter 10 - Working with events -> we do not work with vanilla DOM events in React, but with [SyntheticEvent wrappers](https://facebook.github.io/react/docs/events.html)
+
+Chapter 13 - Creating a Single-Page App using React Router
