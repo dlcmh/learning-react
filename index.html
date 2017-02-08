@@ -68,6 +68,34 @@
         }
       });
 
+      var Contact = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <h2>GOT QUESTIONS?</h2>
+              <p>The easiest thing to do is post on our <a href="http://forum.kirupa.com">forums</a>.</p>
+            </div>
+          );
+        }
+      });
+
+      var Stuff = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <h1>STUFF</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <ol>
+                <li>Nulla pulvinar diam</li>
+                <li>Facilisis bibendum</li>
+                <li>Eget erat</li>
+                <li>Id porttitor</li>
+              </ol>
+            </div>
+          );
+        }
+      });
+
       var App = React.createClass({
         render: function() {
           return (
@@ -90,6 +118,8 @@
         <Router>
           <Route path="/" component={App}>
             <IndexRoute component={Home}/>
+            <Route path="stuff" component={Stuff}/>
+            <Route path="contact" component={Contact}/>
           </Route>
         </Router>,
         destination
