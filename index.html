@@ -20,6 +20,13 @@
       var destination = document.querySelector("#container")
 
       var TodoList = React.createClass({
+        getInitialState: function() {
+          return {
+            // create an empty array called items that can be accessed anywhere
+            // inside this component with this.state.items
+            items: []
+          };
+        },
         render: function() {
           return (
             <div className='todoListMain'>
