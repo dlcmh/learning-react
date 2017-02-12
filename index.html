@@ -23,9 +23,14 @@
         render: function() {
           var todoEntries = this.props.entries;
           function createTask(item) {
-            return <li key={item.key}>item.text</li>
+            return <li key={item.key}>{item.text}</li>
           }
           var listItems = todoEntries.map(createTask)
+          return (
+            <ul className='theList'>
+              {listItems}
+            </ul>
+          )
         }
       })
 
