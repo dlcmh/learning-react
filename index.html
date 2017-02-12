@@ -53,6 +53,7 @@
           this.setState({
             items: itemArray
           })
+          this._inputElement.value = '' // clears the field
           e.preventDefault()
         },
         render: function() {
