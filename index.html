@@ -28,7 +28,15 @@
           };
         },
         addItem: function(e) {
-
+          var itemArray = this.state.items
+          itemArray.push({
+            text: this._inputElement.value,
+            key: Date.now(),
+          })
+          this.setState({
+            items: itemArray
+          })
+          e.preventDefault()
         },
         render: function() {
           return (
