@@ -8,44 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/2.8.1/ReactRouter.min.js"></script>
     <style>
-      body {
-        background-color: #FFCC00;
-        padding: 20px;
-        margin: 0;
-      }
-      h1, h2, p, ul, li {
-        font-family: Helvetica, Arial, sans-serif;
-      }
-      ul.header li {
-        display: inline;
-        list-style-type: none;
-        margin: 0;
-      }
-      ul.header {
-        background-color: #111;
-        padding: 0;
-      }
-      ul.header li a {
-        color: #FFF;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 20px;
-        display: inline-block;
-      }
-      .content {
-        background-color: #FFF;
-        padding: 20px;
-      }
-      .content h2 {
-        padding: 0;
-        margin: 0;
-      }
-      .content li {
-        margin-bottom: 10px;
-      }
-      .active {
-        background-color: #0099FF;
-      }
+
     </style>
   </head>
   <body>
@@ -53,78 +16,10 @@
     <script type="text/babel">
       var destination = document.querySelector("#container")
 
-      var { Router,
-            Route,
-            IndexRoute,
-            IndexLink,
-            Link } = ReactRouter
-
-      var Home = React.createClass({
-        render: function() {
-          return (
-            <div>
-              <h2>HELLO</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          );
-        }
-      });
-
-      var Contact = React.createClass({
-        render: function() {
-          return (
-            <div>
-              <h2>GOT QUESTIONS?</h2>
-              <p>The easiest thing to do is post on our <a href="http://forum.kirupa.com">forums</a>.</p>
-            </div>
-          );
-        }
-      });
-
-      var Stuff = React.createClass({
-        render: function() {
-          return (
-            <div>
-              <h1>STUFF</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <ol>
-                <li>Nulla pulvinar diam</li>
-                <li>Facilisis bibendum</li>
-                <li>Eget erat</li>
-                <li>Id porttitor</li>
-              </ol>
-            </div>
-          );
-        }
-      });
-
-      var App = React.createClass({
-        render: function() {
-          return (
-            <div>
-              <h1>Simple SPA</h1>
-              <ul className="header">
-                <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-                <li><Link to="/stuff" activeClassName="active">Stuff</Link></li>
-                <li><Link to="/contact" activeClassName="active">Contact</Link></li>
-              </ul>
-              <div className="content">
-                {this.props.children}
-              </div>
-            </div>
-          );
-        }
-      });
-
       ReactDOM.render(
-        <Router>
-          <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="stuff" component={Stuff}/>
-            <Route path="contact" component={Contact}/>
-          </Route>
-        </Router>,
+        <div>
+          Hello!
+        </div>,
         destination
       );
     </script>
